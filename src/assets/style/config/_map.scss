@@ -1,0 +1,46 @@
+// *-------------------------*/
+// * Sass Map
+// *-------------------------*/
+
+$theme-box: () !default;
+
+// key , value
+$theme-box: map-merge(
+  (
+    'primary': blue,
+    'danger': rgb(241, 22, 165),
+    'secondary': orange,
+  ),
+  $theme-box
+);
+
+@each $key, $value in $theme-box {
+  .TBox-#{$key} {
+    background-color: $value;
+  }
+}
+
+$space: (
+  '0': 0,
+  '1': 0.5rem,
+  '2': 1rem,
+  '3': 2rem,
+  '4': 2.5rem,
+  '5': 3.5rem,
+  '6': 4.25rem,
+);
+
+// 推擠方向與級距
+@each $name, $number in $space {
+  .c-mb-#{$name} {
+    margin-bottom: $number;
+  }
+
+  .c-pb-#{$name} {
+    padding-bottom: $number;
+  }
+
+  .c-py-#{$name} {
+    padding: $number 0;
+  }
+}

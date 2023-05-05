@@ -1,0 +1,130 @@
+// * -------------------------*/
+// * @mixin
+// * -------------------------*/
+@use '@style/config/variables' as var;
+
+$primary: blue;
+
+// ! @include fontSize(1.6rem , 1.6rem);
+// 斷點
+@mixin desktop($mq: 1024) {
+  @media (min-width: ($mq + px)) {
+    @content;
+  }
+}
+
+@mixin pad($mq: 768) {
+  @media (min-width: ($mq + px)) {
+    @content;
+  }
+}
+
+@mixin mobile($mq: 375) {
+  @media (min-width: ($mq + px)) {
+    @content;
+  }
+}
+
+// --------------
+// 方向性
+// --------------
+@mixin flex($jc, $ai) {
+  align-items: $ai;
+  display: flex;
+  justify-content: $jc;
+}
+
+// 水平置中
+@mixin center(
+  $direction: row,
+  $wrap: wrap,
+  $main-center: center,
+  $sub-center: center
+) {
+  align-items: $sub-center;
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $main-center;
+}
+
+@mixin posCenter() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin pos($t: initial, $l: initial) {
+  left: $l;
+  position: absolute;
+  top: $t;
+}
+
+// --------------
+// 文字性
+// --------------
+// 文字顏色
+@mixin textColor($color) {
+  color: $color;
+}
+
+// 文字大小／行距
+@mixin fontSize($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+// 隱藏文字圖取代
+@mixin hiddenText() {
+  display: block;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+// --------------
+// 背景性
+// --------------
+// 背景顏色
+@mixin bgColor($bgColor: #fff) {
+  background-color: $bgColor;
+}
+
+// 背景圖片
+@mixin bgUrl($url: url('../../assets/images/xxxxx.jpg')) {
+  background-image: $url;
+  background-position: center center;
+  background-size: cover;
+}
+
+// --------------
+// 物件性
+// --------------
+// 圓角
+@mixin radiusSize($w: 10rem, $h: 10rem, $br: 50%) {
+  border-radius: $br;
+  height: $h;
+  width: $w;
+}
+
+// 偽元素
+@mixin fakePseudo($width: 100%, $height: auto, $backgroundColor: #000) {
+  background-color: $backgroundColor;
+  content: ' ';
+  display: block;
+  height: $height;
+  width: $width;
+}
+
+// 物件寬高
+@mixin width($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+// --------------
+// tailwind
+// --------------
+@mixin flexbox-row-center {
+  @apply flex flex-col items-center justify-center;
+}

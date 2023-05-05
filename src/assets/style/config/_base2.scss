@@ -1,0 +1,103 @@
+// *-------------------------*/
+// * base
+// *-------------------------*/
+@use "@style/config/variables" as var;
+
+// *, *::before, *::after{
+//   box-sizing: border-box;
+// }
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans TC",
+    "Microsoft JhengHei",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+:focus {
+  outline: 0;
+}
+
+::selection {
+  color: var.$white;
+  background-color: var.$primary;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5; // 1.2
+  margin: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1 {
+  font-size: 4.8rem; // 4.8rem
+}
+
+h2 {
+  font-size: 3.2rem; // 3.2rem
+}
+
+h3 {
+  font-size: 2.4rem; // 2.4rem
+}
+
+h4 {
+  font-size: 2.2rem; // 2.2rem
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.8rem;
+}
+
+p {
+  margin: 0;
+}
+
+b {
+  font-weight: 500;
+}
+
+a {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  text-decoration: none;
+  color: var.$white; // $black
+  word-break: break-all;
+}
+
+* {
+  outline: 1px solid red;
+}

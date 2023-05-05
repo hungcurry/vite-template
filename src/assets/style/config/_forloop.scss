@@ -1,0 +1,24 @@
+// *-------------------------*/
+// * forLoop
+// *-------------------------*/
+
+.boxLoop {
+  background-color: #ccc;
+  float: left;
+  height: 15rem;
+  width: 15rem;
+}
+
+// 迴圈1--to 會不包括最後一個項目
+@for $i from 1 to 5 {
+  .c-box-#{$i} {
+    background-color: darken(white, $i * 10%);
+  }
+}
+
+// 迴圈2--through 包括最後一個項目
+@for $i from 1 through 5 {
+  .c-box-#{$i} {
+    background-color: darken(white, $i * 10%);
+  }
+}

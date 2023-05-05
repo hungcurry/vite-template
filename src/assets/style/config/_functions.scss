@@ -1,0 +1,45 @@
+// *-------------------------*/
+// * function
+// *-------------------------*/
+@use 'sass:math';
+
+// ! font-size: pxToVw(16);
+// --------------
+// 文字性
+// --------------
+
+// 文字轉rem
+@function pxToRem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// 文字轉vw
+@function pxToVw($px) {
+  @return $px * math.div(100, 1366) + vw;
+}
+
+// --------------
+// 計算性
+// --------------
+// 四則運算
+// .boxMath {
+//   margin-right: math.div(100px, 5); // 除要括號
+//   margin-left: 20px * 5;// 乘
+//   width: 1000px + 500px;// 加
+//   height: 1000px - 200px; // 減
+// }
+
+$ww: 1000px;
+$hh: 253px;
+$s: 5;
+$t: 5px;
+
+// .app{
+//  width: $ww / 5;
+//  height: math.div(100% , 3);
+//  margin-top: 5px + 10px / 3;
+//  margin-left: $ww / $s;
+//  ----失敗-------------------------------
+//  margin-right: 50px / 3px;
+//  margin-right: $hh / $t;
+// }
